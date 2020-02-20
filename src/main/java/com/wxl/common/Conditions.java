@@ -1,18 +1,51 @@
 package com.wxl.common;
 
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
+
 public class Conditions {
 	
-	private Integer currPage;
+	private Integer currPage=1;
 	
 	private String startTime;
 	private String endTime;
 	
-	
-	private String time;
-	private String cnt;
-	
+	private String sel;
 	
 	private String sort;
+	@Override
+	public String toString() {
+		return "Conditions [currPage=" + currPage + ", startTime=" + startTime + ", endTime=" + endTime + ", sel=" + sel
+				+ ", sort=" + sort + "]";
+	}
+
+
+
+
+	public Conditions(Integer currPage, String startTime, String endTime, String sel, String sort) {
+		super();
+		this.currPage = currPage;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.sel = sel;
+		this.sort = sort;
+	}
+
+
+	public String getSel() {
+		return sel;
+	}
+
+
+	public void setSel(String sel) {
+		this.sel = sel;
+	}
+
+
+
+
+
+
 
 
 	public Integer getCurrPage() {
@@ -45,24 +78,6 @@ public class Conditions {
 	}
 
 
-	public String getTime() {
-		return time;
-	}
-
-
-	public void setTime(String time) {
-		this.time = time;
-	}
-
-
-	public String getCnt() {
-		return cnt;
-	}
-
-
-	public void setCnt(String cnt) {
-		this.cnt = cnt;
-	}
 
 
 	public String getSort() {
@@ -75,14 +90,7 @@ public class Conditions {
 	}
 
 
-	public Conditions(String startTime, String endTime, String time, String cnt, String sort) {
-		super();
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.time = time;
-		this.cnt = cnt;
-		this.sort = sort;
-	}
+
 
 
 	public Conditions() {
@@ -90,11 +98,5 @@ public class Conditions {
 	}
 
 
-	@Override
-	public String toString() {
-		return "Conditions [startTime=" + startTime + ", endTime=" + endTime + ", time=" + time + ", cnt=" + cnt
-				+ ", sort=" + sort + "]";
-	}
-	
 	
 }
